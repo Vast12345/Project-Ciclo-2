@@ -264,11 +264,13 @@ hr {
     font-weight: bolder;
     font-size: xx-large;
     color: var(--motorwhite);
+    
 }
 #values {
     text-align: center;
     font-size: large;
     color: var(--motorwhite);
+    font-size: clamp(1rem, 2.5vw, 2rem); 
 }
 
 .about-container a {

@@ -162,8 +162,10 @@ body {
     text-align: center;
 }
 #paragraph {
-    font-size: x-large;
+    font-size: clamp(1rem, 2.5vw, 2rem); 
     text-align: center;
+    overflow: hidden;
+
 }
 .slide1-container {
     display: flex;
@@ -176,11 +178,12 @@ body {
     background-color: rgba(210,189,194,255);
     border-radius: 20px;
     margin: 5rem 0;
+    overflow: hidden;
 }
 .img-1 {
     object-fit: cover;
-    width: 30%;
-    height: 100%;
+    max-width: 30%;
+    max-height: 100%;
 }
 .img-1 img {
     display: block;
@@ -205,13 +208,14 @@ body {
     align-items: center;
     padding: 1rem;
     transition: 1s ease-in-out;
+    overflow: hidden;
 }
 .article-1:hover {
     transform: scale(1.1);
     z-index: 2;
 }
 .article-1 p {
-    font-size: x-large;
+    font-size: clamp(1rem, 2vw, 2rem);
     font-weight: bold;
     text-align: center;
     font-family: 'Libre Franklin', sans-serif;
@@ -227,11 +231,12 @@ body {
     margin: 5rem 0;
     background-color: rgba(255,238,210,255);
     border-radius: 20px;
+    overflow: hidden;
 }
 .img-2 {
     object-fit: cover;
     width: 30%;
-    height: 100%;
+    max-height: 100%;
 }
 .img-2 img {
     display: block;
@@ -256,13 +261,14 @@ body {
     align-items: center;
     padding: 1rem;
     transition: 1s ease-in-out;
+    overflow: hidden;
 }
 .article-2:hover {
     transform: scale(1.1);
     z-index: 2;
 }
 .article-2 p {
-    font-size: x-large;
+    font-size: clamp(1rem, 2vw, 2rem);
     font-weight: bold;
     text-align: center;
     font-family: 'Libre Franklin', sans-serif;
@@ -279,6 +285,7 @@ body {
     border-radius: 40px;
     padding: 3rem;
     gap: 5rem;
+    overflow: hidden;
 }
 .img-3 {
     object-fit: cover;
@@ -308,13 +315,14 @@ body {
     align-items: center;
     padding: 1rem;
     transition: 1s ease-in-out;
+    overflow: hidden;
 }
 .article-3:hover {
     transform: scale(1.1);
     z-index: 2;
 }
 .article-3 p {
-    font-size: x-large;
+    font-size: clamp(1rem, 2vw, 2rem);
     font-weight: bold;
     text-align: center;
     font-family: 'Libre Franklin', sans-serif;
@@ -378,36 +386,42 @@ body {
     }
     .slide1-container {
         flex-direction: column;
-        height: 200vh;
+        height: 180vh;
         padding: 5rem 3rem;
     }
     .img-1 {
         width: 100%;
-        height: 70vh;
+        height: 50vh;
         transform: scale(1.1);
     }
     .article-1 {
         width: 100%;
         height: 40%;
-        line-height: 2.2rem;
+        line-height: 2rem;
+    }
+    .article-1 p {
+        text-align: left;
     }
     .slide2-container {
         flex-direction: column;
-        height: 200vh;
+        height: 180vh;
         padding: 5rem 3rem;
     }
     .img-2 {
         width: 100%;
-        height: 70vh;
+        height: 50vh;
         transform: scale(1.1);
     }
     .article-2 {
         width: 100%;
         height: 40%;
-        line-height: 2.2rem;
+        line-height: 2rem;
     }
-    .article-2 {
-        font-size: large;
+    .article-2 p {
+        text-align: left;
+    }
+    .slider3-container {
+        width: 100%;
     }
     .img-3 {
         width: 100%;
@@ -415,11 +429,12 @@ body {
         min-height: 20%;
     }
     .article-3 {
+        width: 100%;
         height: 70%;
     }
     .article-3 p {
-        font-size: larger;
-        line-height: 2.2rem;
+        text-align: left;
+        line-height: 2rem;
     }
     .footer {
         height: 70vh;
