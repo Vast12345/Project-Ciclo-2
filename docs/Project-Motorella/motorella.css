@@ -249,6 +249,7 @@ hr {
     flex-direction: column;
 }
 .directions p {
+    font-size: small;
     margin: 0.5rem 0;
 }
 .footer-logo {
@@ -325,6 +326,7 @@ hr {
         margin: 3vh 0;
     }
     .about-container a {
+        font-size: small;
         width: 30%;
     }
     .footer {

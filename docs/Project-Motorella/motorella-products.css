@@ -173,6 +173,7 @@ body {
     flex-direction: column;
 }
 .directions p {
+    font-size: small;
     margin: 0.5rem 0;
 }
 .footer-logo {
