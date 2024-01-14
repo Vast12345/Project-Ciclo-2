@@ -2,10 +2,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
 }
 body {
     font-family: 'Lato', sans-serif;
-    padding: 20px;
 }
 :root {
     --motorpink: #FEC9DD;
@@ -15,14 +15,14 @@ body {
 }
 .nav-bar {
     width: 100%;
+    height: 100px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     list-style: none;
     position: relative;
     background-color: var(--motorgreen);
-    border-radius: 20px;
-    padding: 12 20px;
+    padding: 12px 20px;
     overflow: hidden;
 }
 .logo img {
@@ -31,7 +31,7 @@ body {
 .menu {
     display: flex;
 }
-.menu li {
+.menu li, form {
     padding-right: 30px;
 }
 .menu li a {
@@ -44,6 +44,18 @@ body {
     text-transform: uppercase;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 
+}
+.menu input[type=search] {
+    width: 7rem;
+    height: 1.5rem;
+    border-radius: 4px;
+    background-color: var(--motorred);
+    color: var(--motorwhite);
+    font-family: 'Lato', sans-serif;
+}
+::placeholder {
+    color: var(--motorwhite);
+    opacity: 1;
 }
 .menu li a::after {
     content: "";
@@ -102,7 +114,7 @@ body {
 .products-container {
     margin: 10vh auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-rows: repeat(2, 1fr);
     place-items: center;
     width: 80%;
@@ -120,8 +132,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    max-width: 316px;
-    height: 380px;
+    width: 100%;
+    height: 100%;
     background-color: var(--motorwhite);
     border-radius: 20px;
 }
@@ -147,10 +159,10 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .footer {
     width: 100%;
-    height: 40vh;
-    border-radius: 20px;
+    height: 400px;
     background-color: var(--motorgreen);
     padding: 3rem ;
 }
@@ -173,7 +185,7 @@ body {
     flex-direction: column;
 }
 .directions p {
-    font-size: small;
+    font-size: medium;
     margin: 0.5rem 0;
 }
 .footer-logo {
@@ -181,9 +193,22 @@ body {
     overflow: hidden;
 }
 .footer-logo img{
-    width: 10vw;
+    width: 200px;
 }
 @media (max-width: 510px) {
+    .nav-bar {
+        background: url(../Project-Motorella/Project-Images/menu_btn_d3afda2769ecbdf8d383793bedcaae82.png);
+        width: 100px;
+        height: 100px;
+        font-size: 20px;
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 0;
+        z-index: 1000;
+        
+    }
     .menu {
         flex-direction: column;
         align-items: center;
@@ -199,31 +224,28 @@ body {
     }
     .menu li {margin-top: 40px;}
     .menu li a {padding: 10px;}
-    .open-menu, .close-menu {display: block;}
+    .open-menu, .close-menu {display: block; right: 15px; top: 25px;}
     #check:checked ~ .menu {right: 0;}
     .products-container {
-        margin: 10vh auto;
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
-        width: 80%;
-        height: 330vh;
+        margin: 10vh 0;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        width: 100%;
         background-color: var(--motorred);
         overflow: hidden;
         border-radius: 20px;
     }
     .product-item {
-        margin: 5vh 0;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-flow: column;
         width: 100%;
-        height: 50vh;
+        height: 150px;
     }
     .footer {
-        height: 70vh;
+        height: 700px;
     }
     .footer-bottom {
         flex-direction: column;
@@ -253,4 +275,23 @@ body {
     .menu li a {padding: 10px;}
     .open-menu, .close-menu {display: block;}
     #check:checked ~ .menu {right: 0;}
+}
+@media (max-width: 768px) {
+    .footer {
+        height: auto;
+        padding: 1rem;
+    }
+    .directions p{
+        font-size: large;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo img {
+        min-width: 200px;
+        margin-top: 1rem;
+        border-radius: 20px;
+    }
 }

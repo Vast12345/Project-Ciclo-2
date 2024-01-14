@@ -2,10 +2,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
 }
 body {
     font-family: 'Lato', sans-serif;
-    padding: 20px;
 }
 :root {
     --motorpink: #FEC9DD;
@@ -15,14 +15,14 @@ body {
 }
 .nav-bar {
     width: 100%;
+    height: 100px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     list-style: none;
     position: relative;
     background-color: var(--motorgreen);
-    border-radius: 20px;
-    padding: 12 20px;
+    padding: 12px 20px;
     overflow: hidden;
 }
 .logo img {
@@ -91,6 +91,8 @@ body {
 .main {
     margin-top: 15vh;
     margin-bottom: 15vh;
+    width: 100%;
+    padding: 0;
 }
 .pinklogo {
     display: flex;
@@ -98,7 +100,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 60%;
-    height: 60vh;
+    height: 600px;
     margin: 0 auto;
     background-color: var(--motorpink);
     border-radius: 20px;
@@ -112,7 +114,7 @@ body {
     margin-top: 30vh;
     display: flex;
     justify-content: center;
-    font-size: 5vh;
+    font-size: 50px;
 }
 .product-title a {
     text-decoration: none;
@@ -126,66 +128,55 @@ hr {
 }
 .products-container {
     margin: 10vh auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     flex-flow: row;
     justify-content: space-around;
     align-items: center;
     width: 80%;
-    height: 30vh;
+    min-height: 500px;
     background-color: var(--motorred);
     overflow: hidden;
     border-radius: 20px;
-}
-#product-more {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 80%;
-    height: 30vh;
-    background-color: var(--motorred);
-    overflow: hidden;
-    border-radius: 20px;
-    padding-right: 0;
 }
 .product-item {
     display: flex;
-    padding: 1rem;
+    margin: 10px;
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    max-width: 200px;
-    height: 20vh;
+    border-radius: 20px;
 }
 .product-item img{
     display: block;
-    width: 100%;
-    height: 100%;
     border-radius: 20px;
+    max-width: 100px;
 }
 .product-button {
     margin-top: 5%;
-    width: 50%;
+    width: clamp(8rem, 50px, 10rem);
     border: none;
     border-radius: 10px;
     padding: 0.5rem;
     background-color: var(--motorgreen);
     color: var(--motorwhite);
     cursor: pointer;
+    text-align: center;
 }
 .about-container {
     display: flex;
     flex-flow: row;
     background-color: #4EBCAA;
     border-radius: 20px;
+    width: 100%;
     overflow: hidden;
-    width: 90%;
-    margin: 0 auto;
+    min-height: 500px;
 }
 .about-container img {
-    min-width: 45vw;
+    flex-grow: 1;
 }
 .about-container article {
+    flex-grow: 1;
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;
@@ -203,7 +194,7 @@ hr {
     text-align: center;
     font-size: large;
     color: var(--motorwhite);
-    font-size: clamp(1rem, 2.5vw, 2rem); 
+    font-size: clamp(1rem, 20px, 3rem); 
 }
 
 .about-container a {
@@ -215,18 +206,18 @@ hr {
     padding: 0.5rem 1rem;
     text-align: center;
 }
-@media (min-width: 510px) and (max-width: 768px) {
+@media (min-width: 510px) and (max-width: 769px) {
     #value, #values, article>a {
-        margin: 2vh 0;
+        margin: 20px 0;
     }
+
     .about-container a {
         width: 50%;
     }
 }
 .footer {
     width: 100%;
-    height: 40vh;
-    border-radius: 20px;
+    height: 400px;
     background-color: var(--motorgreen);
     padding: 3rem ;
 }
@@ -249,7 +240,7 @@ hr {
     flex-direction: column;
 }
 .directions p {
-    font-size: small;
+    font-size: medium;
     margin: 0.5rem 0;
 }
 .footer-logo {
@@ -257,9 +248,22 @@ hr {
     overflow: hidden;
 }
 .footer-logo img{
-    width: 10vw;
+    width: 200px;
 }
 @media (max-width: 510px) {
+    .nav-bar {
+        background: url(../Project-Motorella/Project-Images/menu_btn_d3afda2769ecbdf8d383793bedcaae82.png);
+        width: 100px;
+        height: 100px;
+        font-size: 20px;
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 0;
+        z-index: 1000;
+        
+    }
     .menu {
         flex-direction: column;
         align-items: center;
@@ -275,22 +279,19 @@ hr {
     }
     .menu li {margin-top: 40px;}
     .menu li a {padding: 10px;}
-    .open-menu, .close-menu {display: block;}
+    .open-menu, .close-menu {display: block; right: 15px; top: 25px;}
     #check:checked ~ .menu {right: 0;}
     .pinklogo {
         width: 70%;
+        height: 400px;
     }
     .products-container {
-        margin: 10vh auto;
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
+        margin: 10vh 0;
         align-items: center;
-        width: 80%;
-        height: 90vh;
+        width: 100%;
         background-color: var(--motorred);
         overflow: hidden;
-        border-radius: 20px;
+        border-radius: 0;
     }
     #product-more {
         display: flex;
@@ -298,39 +299,40 @@ hr {
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 90vh;
+        height: 900px;
         background-color: var(--motorred);
         overflow: hidden;
         border-radius: 20px;
         padding-right: 0;
     }
-    .product-item {
+    /* .product-item {
         margin: 5vh 0;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-flow: column;
         width: 80%;
-        height: 20vh;
-    }
+    } */
     .about-container {
+        width: 100%;
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        height: 1000px;
+        border-radius: 0;
     }
     .about-container article {
-        margin-top: 5vh;
+        margin-top: 50px;
 
     }
     #value, #values, article>a {
-        margin: 3vh 0;
+        margin: 30px 0;
     }
     .about-container a {
         font-size: small;
         width: 30%;
     }
     .footer {
-        height: 70vh;
+        height: 700px;
     }
     .footer-bottom {
         flex-direction: column;
@@ -364,4 +366,22 @@ hr {
         width: 90%;
     }
 }
+@media (max-width: 768px) {
+    .footer {
+        height: auto;
+        padding: 1rem;
+    }
+    .directions p{
+        font-size: large;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .footer-logo img {
+        min-width: 200px;
+        margin-top: 1rem;
+        border-radius: 20px;
+    }
+}
